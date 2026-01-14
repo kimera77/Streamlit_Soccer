@@ -1,6 +1,13 @@
 import streamlit as st
 import pandas as pd
+import sys
+import os
 from dotenv import load_dotenv
+
+# Añadir el directorio actual al path de Python para poder importar los módulos
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
 
 # Cargar variables de entorno desde .env (API keys, etc.)
 load_dotenv()
