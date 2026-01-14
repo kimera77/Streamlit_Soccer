@@ -25,6 +25,9 @@ venv.bak/
 # Configuración de Streamlit (puede contener secretos)
 .streamlit/secrets.toml
 
+# NOTA: .streamlit/config.toml SÍ se sube (solo tiene config de tema)
+# NO ignoramos .streamlit/config.toml
+
 # Archivos de sistema
 .DS_Store
 Thumbs.db

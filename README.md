@@ -52,22 +52,40 @@ Para obtener tu API key de Hugging Face:
 
 ## 💻 Uso
 
-### Ejecutar la aplicación
+### Ejecutar localmente
 ```bash
 cd panel/src
 streamlit run app.py
 ```
 La aplicación se abrirá en tu navegador en `http://localhost:8501`
 
+### 🌐 Deployment en Streamlit Cloud
+
+Para desplegar en producción, consulta las instrucciones detalladas en [DEPLOYMENT.md](DEPLOYMENT.md).
+
+**Resumen rápido:**
+1. Configura el punto de entrada: `panel/src/app.py`
+2. Añade tu API key de Hugging Face en Streamlit Secrets
+3. Push a tu repositorio de GitHub
+4. Streamlit Cloud detectará automáticamente los cambios
+
+### 🧪 Verificar antes de deployment
+```bash
+python test_paths.py
+```
+Este script verificará que todas las rutas y archivos necesarios estén configurados correctamente.
+
 ## 🛠️ Tecnologías
 
-- **Python 3.12**
+- **Python 3.11+**
 - **Streamlit** - Framework web interactivo
 - **Pandas** - Manipulación de datos
 - **Plotly** - Visualizaciones interactivas
-- **SQLAlchemy** - Base de datos
-- **Hugging Face** - Generación de imágenes con IA
-- **Jupyter** - Notebooks para análisis
+- **Hugging Face API** - Generación de imágenes con IA
+- **Pillow** - Procesamiento de imágenes
+- **Jupyter** - Notebooks para análisis (opcional, solo desarrollo)
+
+**Nota:** SQLite ya no se usa (código comentado) - ahora se carga directamente desde CSV para reducir el peso del repositorio.
 
 ## 📝 Funcionalidades
 

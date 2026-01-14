@@ -94,23 +94,23 @@ def render_home_page(df):
         # Determinar qué mensaje mostrar
         if 'show_regen_msg' in st.session_state and st.session_state.show_regen_msg:
             # Acabamos de regenerar manualmente
-            st.success(f"✅ **CSV Regenerado Exitosamente** - Procesado desde SQLite en **{load_info['processing_time']:.2f}s**")
+            st.success(f"✅ **CSV Cargado Exitosamente** - Procesado en **{load_info['processing_time']:.2f}s**")
             # Limpiar el flag
             del st.session_state.show_regen_msg
         elif load_info['csv_already_existed'] == False:
             # Primera generación del CSV (app inició sin CSV)
             # Usamos == False en lugar de not para distinguir de None
-            st.success(f"⚙️ **Procesamiento Completo** - CSV generado desde SQLite en **{load_info['processing_time']:.2f}s**")
+            st.success(f"⚙️ **Procesamiento Completo** - CSV cargado en **{load_info['processing_time']:.2f}s**")
         elif load_info['csv_already_existed'] == True:
             # CSV ya existía - carga normal
-            st.info(f"🚀 **Carga Rápida** - CSV existente cargado en **{load_info['processing_time']:.3f}s**")
-            st.caption("✨ Los datos ya estaban procesados. No fue necesario regenerar desde SQLite.")
+            st.info(f"🚀 **Carga Rápida** - CSV cargado en **{load_info['processing_time']:.3f}s**")
+            st.caption("✨ Los datos están listos para usar.")
         else:
             # Caso inesperado (csv_already_existed == None)
             st.warning("⚠️ Estado de carga desconocido")
         
-        st.markdown("**📥 Carga de Datos:**")
-        st.write("· Leer SQLITE\n · Limpiar datos\n · Filtrar año 2016\n · Unir tablas\n · Limpiar datos")
+        st.markdown("**📥 Fuente de Datos:**")
+        st.write("· Archivo CSV consolidado\n · Datos de jugadores 2016\n · Información completa de equipos, ligas y países")
         
         st.markdown("<br>", unsafe_allow_html=True)
         
