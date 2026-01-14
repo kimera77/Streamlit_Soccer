@@ -35,10 +35,30 @@ from .const import SQL_FILE_NAME, CSV_FILE_NAME
 DATA_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 RUTA_ABSOLUTA_CSV = os.path.join(DATA_DIR, 'data', 'data.csv')
 
+<<<<<<< Updated upstream
 # Verificar en runtime (útil para debug)
 # print(f"DEBUG: __file__ = {__file__}")
 # print(f"DEBUG: DATA_DIR = {DATA_DIR}")
 # print(f"DEBUG: RUTA_ABSOLUTA_CSV = {RUTA_ABSOLUTA_CSV}")
+=======
+# Intentar encontrar la carpeta 'data' en múltiples ubicaciones
+def _find_data_dir():
+    """Encuentra el directorio 'data' en diferentes entornos (local, Hugging Face, etc.)"""
+    # Opción 1: Relativa al script (panel/src/utils -> ../../.. -> data)
+    option1 = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..', 'data'))
+    # Opción 2: Relativa al directorio de trabajo actual (para Hugging Face Spaces)
+    option2 = os.path.abspath(os.path.join(os.getcwd(), 'data'))
+    # Opción 3: En el mismo nivel que el script (legacy)
+    option3 = os.path.abspath(os.path.join(SCRIPT_DIR, 'data'))
+    
+    # Retornar la primera que contenga el archivo CSV o DB
+    for path in [option1, option2, option3]:
+        if os.path.exists(os.path.join(path, 'data.csv')) or os.path.exists(os.path.join(path, 'data.sqlite')):
+            return path
+    
+    # Si ninguna existe, usar la primera opción por defecto
+    return option1
+>>>>>>> Stashed changes
 
 # === CÓDIGO SQLite COMENTADO (pesa demasiado) ===
 # DATA_DIR_OLD = 'C:/Users/Joaquim/OneDrive/UPGRADE/PROYECTO1_Soccer/data'
