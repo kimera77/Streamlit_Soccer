@@ -9,7 +9,7 @@ import utils.data_loader as loader
 from utils.config import PAGE_CONFIG
 
 
-
+ 
 st.set_page_config(**PAGE_CONFIG)
 
 # Limpiar caché al inicio SOLO si es la primera vez que se carga la app en esta sesión
