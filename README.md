@@ -1,6 +1,6 @@
 # ⚽ Soccer Analytics - Proyecto de Análisis de Fútbol
 
-Aplicación de análisis de datos de fútbol con visualizaciones interactivas y generación de imágenes con IA.
+Aplicación de análisis de datos de fútbol del 2016 con visualizaciones interactivas y generación de imágenes con IA.
 
 ## 📋 Descripción
 
