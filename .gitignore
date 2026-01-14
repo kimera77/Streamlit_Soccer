@@ -1,0 +1,42 @@
+# ========================================
+# GITIGNORE - PROYECTO SOCCER
+# ========================================
+
+# Variables de entorno (NUNCA subir al repositorio)
+.env
+*.env
+.env.local
+.env.*.local
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Directorios de entorno virtual
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Configuración de Streamlit (puede contener secretos)
+.streamlit/secrets.toml
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Archivos temporales
+*.log
+*.tmp
